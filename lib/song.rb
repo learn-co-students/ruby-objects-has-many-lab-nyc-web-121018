@@ -1,8 +1,5 @@
-require 'pry'
-
-require_relative "./artist"
-
 class Song
+
   attr_accessor :name, :artist
 
   @@all = []
@@ -10,7 +7,6 @@ class Song
   def initialize(name)
     @name = name
     @artist = artist
-
     @@all << self
   end
 
@@ -19,11 +15,9 @@ class Song
   end
 
   def artist_name
-    if @artist.name.length > 0
-      @artist.name
-    else
-      nil
-    end
+    artist.name if artist
+  
   end
+
 
 end #end of song class
